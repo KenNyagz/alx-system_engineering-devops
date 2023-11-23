@@ -7,18 +7,16 @@
 count=1
 while [ $count -le 20 ];
 do
+	echo $count
 	case $count in
 		4)
-			echo -e "$count \nbad luck from China"
+			echo -e "bad luck from China"
 			;;
 		9)
-			echo -e "$count \nbad luck from Japan"
+			echo -e "bad luck from Japan"
 			;;
 		17)
-			echo -e "$count \nbad luck from Italy"
-			;;
-		*)
-			echo $count
+			echo -e "bad luck from Italy"
 			;;
 	esac
 	((count++))
