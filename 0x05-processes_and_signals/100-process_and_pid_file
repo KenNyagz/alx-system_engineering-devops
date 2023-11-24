@@ -8,18 +8,16 @@
 
 
 cleanup(){
-        rm -rf /var/run/myscript.pid
+        rm -f /var/run/myscript.pid
         exit
 }
 
-trap 'echo "I hate the kill command"; exit' SIGTERM
-trap 'echo "Y U no love me?!"; exit' SIGINT
-
 trap cleanup SIGQUIT SIGTERM
+trap 'echo "I hate the kill command"' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
 
-
-echo $$ > /var/run/myscript.pid
-while true;
+echo $$ > "/var/run/myscript.pid"
+while true
 do
 	echo "To infinity and beyond"
 	sleep 2
