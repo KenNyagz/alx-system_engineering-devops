@@ -9,7 +9,7 @@
 echo $$ > /var/run/myscript.pid
 
 trap 'echo "I hate the kill command"; exit' SIGTERM
-trap 'echo "Y U no love me?!; exit"' SIGINT
+trap 'echo "Y U no love me?!"; exit' SIGINT
 
 cleanup(){
 	rm -r /var/run/myscript.pid
