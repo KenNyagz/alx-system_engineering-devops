@@ -13,7 +13,7 @@ trap 'echo "Y U no love me?!"' SIGINT
 
 cleanup(){
 	rm -r /var/run/myscript.pid
-	exit 0
+#	exit 0
 }
 trap cleanup SIGQUIT
 
