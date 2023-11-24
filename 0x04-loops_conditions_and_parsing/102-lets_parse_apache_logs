@@ -3,6 +3,6 @@
 #	Format: IP HTTP_CODE:
 #		in a list format; <IP-address HTTP-code>
 
-log_file="apache2-access.log"
+log_file="apache-access"
 
-awk '{print $1, $9}' "log_file"
+awk '{print $1, $9}' "$log_file"
