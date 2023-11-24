@@ -5,5 +5,5 @@
 #		In list format
 #	Ordered from the greatest to the lowest number of occurrences
 
-log_file=apache-access
+log_file="apache-access.log"
 awk '{print $1, $9}' "$log_file" | sort | uniq -c | sort -nr
