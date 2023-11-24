@@ -4,11 +4,6 @@
 #	With a sleep 2 in between each iteration
 #	I am invincible!!! when receiving a SIGTERM signal
 
-#handle_sigterm(){
-#	echo "I am invincible!!!"
-#	exit 0
-#}
-
 trap 'echo "I am invincible!!!"' SIGTERM
 while true
 do
