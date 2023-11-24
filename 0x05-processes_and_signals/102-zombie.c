@@ -10,7 +10,7 @@ int infinite_while(void);
 *
 */
 
-int main (void)
+int main(void)
 {
 
 	pid_t zombie_pid;
@@ -35,7 +35,10 @@ int main (void)
 	return (0);
 }
 
-
+/**
+*infinite_while - infinite loop to keep program running
+*Return: Never return, forever runs
+*/
 
 int infinite_while(void)
 {
