@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # script that stops a process
 
-pid=$(pgrep -f "To infinity and beyond")
+processid=$(pgrep -f "To infinity and beyond")
 
 if [ -z "$pid" ];
 then
 	echo "No matching process found."
 else
-	kill "$pid"
+	kill "$processid"
 fi
