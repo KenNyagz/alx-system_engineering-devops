@@ -26,7 +26,7 @@ trap 'sigint_handler' SIGINT
 trap 'sigquit_term_handler' SIGQUIT SIGTERM
 
 
-echo "$$" > /var/run/myscript.pid
+echo $$ > /var/run/myscript.pid
 
 #trap 'echo "I hate the kil command"; rm -rf /var/run/myscript.pid; exit' 15 #SIGQUIT
 #trap 'rm -rf /var/run/myscript.pid; exit' 3 #SIGINT
