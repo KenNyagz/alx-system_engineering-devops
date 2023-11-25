@@ -7,7 +7,8 @@ IFS=":"
 
 while IFS=":" read -r username passwd uid gid uinfo homedir shell;
 do
-	echo "The user $username is part of the $gid, lives in $homedir and rides $shell. $uid's place is protected by $passwd, more info about the user is here: $uinfo"
-done < /etc/passwd
+	echo "The user $username is part of the $gid, lives in $homedir and rides $shell. $uid's place
+		is protected by $passwd, more info about the user is here: $uinfo"
+done
 
 # exec 3<&-
