@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # displays all active IPv4 IPs
-
-while 
+ifconfig | awk '/inet / && !/inet6/ {print $2}'
