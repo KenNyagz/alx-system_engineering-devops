@@ -47,4 +47,99 @@ are you not entertained
 quit
 exit
 x^T^\./100-port_listening_on_localhost: line 4:  2003 Quit                    nc -lp 98
-]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networ
+]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# ./100-port_listening_on_localhost 
+sda
+^X^Z
+[1]+  Stopped                 ./100-port_listening_on_localhost
+]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# c
+[H[2J[3J]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# git acp ""Port listening "on localhost"
+[master 7f25524] Port listening on localhost
+ 2 files changed, 54 insertions(+)
+ create mode 100644 0x08-networking_basics_2/that
+Enumerating objects: 8, done.
+Counting objects:  12% (1/8)Counting objects:  25% (2/8)Counting objects:  37% (3/8)Counting objects:  50% (4/8)Counting objects:  62% (5/8)Counting objects:  75% (6/8)Counting objects:  87% (7/8)Counting objects: 100% (8/8)Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects:  20% (1/5)Compressing objects:  40% (2/5)Compressing objects:  60% (3/5)Compressing objects:  80% (4/5)Compressing objects: 100% (5/5)Compressing objects: 100% (5/5), done.
+Writing objects:  20% (1/5)Writing objects:  40% (2/5)Writing objects:  60% (3/5)Writing objects:  80% (4/5)Writing objects: 100% (5/5)Writing objects: 100% (5/5), 1.67 KiB | 428.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://github.com/KenNyagz/alx-system_engineering-devops.git
+   76269ab..7f25524  master -> master
+]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# c
+[H[2J[3J]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         DESKTOP-880167E 0.0.0.0         UG    0      0        0 eth0
+172.30.112.0    0.0.0.0         255.255.240.0   U     0      0        0 eth0
+]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# route-[K -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.30.112.1    0.0.0.0         UG    0      0        0 eth0
+172.30.112.0    0.0.0.0         255.255.240.0   U     0      0        0 eth0
+]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# regex
+
+Command 'regex' not found, did you mean:
+
+  command 'bregex' from deb bacula-director (9.4.2-2ubuntu5)
+  command 'reged' from deb chntpw (1.0-1.1)
+
+Try: apt install <deb name>
+
+]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# acl
+
+Command 'acl' not found, but there are 17 similar ones.
+
+]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# acl[K[K[K,an [K[K[K[Kman telnet
+[?1049h[22;0;0t[?1h=TELNET(1)                                        BSD General Commands Manual                                        TELNET(1)[m
+[m
+[1mNAME[0m[m
+     [1mtelnet[0m — user interface to the TELNET protocol[m
+[m
+[1mSYNOPSIS[0m[m
+     [1mtelnet[0m [[1m-468ELadr[0m] [[1m-S[0m [4mtos[24m] [[1m-b[0m [4maddress[24m] [[1m-e[0m [4mescapechar[24m] [[1m-l[0m [4muser[24m] [[1m-n[0m [4mtracefile[24m] [[4mhost[24m [[4mport[24m]][m
+[m
+[1mDESCRIPTION[0m[m
+     The [1mtelnet[0m command is used for interactive communication with another host using the TELNET protocol. It begins in com‐[m
+     mand mode, where it prints a telnet prompt ("telnet> "). If [1mtelnet[0m is invoked with a [4mhost[24m argument, it performs an [1mopen[0m[m
+     command implicitly; see the description below.[m
+[m
+     Options:[m
+[m
+     [1m-4[0m      Force IPv4 address resolution.[m
+[m
+     [1m-6[0m      Force IPv6 address resolution.[m
+[m
+     [1m-8[0m      Request 8-bit operation. This causes an attempt to negotiate the TELNET BINARY option for both input and output.[m
+             By default telnet is not 8-bit clean.[m
+[m
+     [1m-E[0m      Disables the escape character functionality; that is, sets the escape character to ``no character''.[m
+[m
+     [1m-L[0m      Specifies an 8-bit data path on output.  This causes the TELNET BINARY option to be negotiated on just output.[m
+[m
+     [1m-a[0m      Attempt automatic login.  Currently, this sends the user name via the USER variable of the NEW-ENVIRON option if[m
+             supported by the remote system. The username is retrieved via getlogin(3).[m
+[m
+     [1m-b[0m [4maddress[24m[m
+             Use bind(2) on the local socket to bind it to a specific local address.[m
+[7m Manual page telnet(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page telnet(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K     [1m-d[0m      Sets the initial value of the [1mdebug[0m toggle to TRUE.[m
+[7m Manual page telnet(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page telnet(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K     [1m-r[0m      Emulate rlogin(1).  In this mode, the default escape character is a tilde. Also, the interpretation of the es‐[m
+[7m Manual page telnet(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             cape character is changed: an escape character followed by a dot causes [1mtelnet[0m to disconnect from the remote[m
+[7m Manual page telnet(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             host. A ^Z instead of a dot suspends [1mtelnet[0m, and a ^] (the default [1mtelnet[0m escape character) generates a normal[m
+[7m Manual page telnet(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             telnet prompt. These codes are accepted only at the beginning of a line.[m
+[7m Manual page telnet(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page telnet(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K     [1m-S[0m [4mtos[24m  Sets the IP type-of-service (TOS) option for the telnet connection to the value [4mtos[24m.[m
+[7m Manual page telnet(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page telnet(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K     [1m-e[0m [4mescapechar[24m[m
+[7m Manual page telnet(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             Sets the escape character to [4mescapechar.[24m If no character is supplied, no escape character will be used.  Enter‐[m
+[7m Manual page telnet(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             ing the escape character while connected causes telnet to drop to command mode.[m
+[7m Manual page telnet(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page telnet(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K     [1m-l[0m [4muser[24m[m
+[7m Manual page telnet(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K             Specify [4muser[24m as the user to log in as on the remote system. This is accomplished by sending the specified name[m
+[7m Manual page telnet(1) line 17 (press h for help or q to quit)[27m[K[K[7m Manual page telnet(1) line 17 (press h for help or q to quit)[27m[K[K             as the USER environment variable, so it requires that the remote system support the TELNET NEW-ENVIRON option.[m
+[7m Manual page telnet(1) line 18 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# 
+]0;root@DESKTOP-880167E: ~/alx-system_engineering-devops/0x08-networking_basics_2root@DESKTOP-880167E:~/alx-system_engineering-devops/0x08-networking_basics_2# exit
+There are stopped jobs.
+
+Script done on 2023-12-02 16:52:50+03:00 [COMMAND_EXIT_CODE="0"]

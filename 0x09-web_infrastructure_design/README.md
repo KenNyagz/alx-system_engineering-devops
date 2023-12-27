@@ -1,11 +1,11 @@
 Team project between me and Maureen Rotich, Metrine Makana on understanding core underlying concepts in web infrastructure.
--Concepts to learn:
--DNS
--Monitoring
--Web Server
--Network basics
--Load balancer
--Server
+- Concepts to learn:
+- DNS
+- Monitoring
+- Web Server
+- Network basics
+- Load balancer
+- Server
 Network basics concept page
 Server concept page
 Web server concept page
