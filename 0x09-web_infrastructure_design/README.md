@@ -1,4 +1,5 @@
 Team project between me and Maureen Rotich, Metrine Makana on understanding core underlying concepts in web infrastructure.
+
 *Concepts to learn:***
 - DNS
 - Monitoring
