@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
 #  script that uses ssh to connect to your server using the private key ~/.ssh/school
 
-server_ip="100.26.165.198"
-username="ubuntu"
-
-# Path to private key
-private_key="~/.ssh/school"
-
-# SSH connection command
-ssh -i "$private_key" "$username@$server_ip"
+ssh -i ~/.ssh/school ubuntu@your_server_ip
