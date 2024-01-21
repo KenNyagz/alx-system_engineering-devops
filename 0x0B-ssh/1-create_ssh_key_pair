@@ -2,12 +2,4 @@
 # creates an RSA key pair
 
 private_key="school"
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -N "betty"
-
-echo "Your identification has been saved in school."
-echo "Your public key has been saved in school.pub."
-echo "The key fingerprint is:"
-ssh-keygen -l -E md5 -f "$private_key"
-
-echo "The key's randomart image is:"
-ssh-keygen -l -v -E md5 -f "$private_key"
+ssh-keygen -t rsa -b 4096 -f school -N "betty"
