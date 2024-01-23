@@ -6,9 +6,4 @@ if [ "$#" -lt 4 ]; then
 	exit 1
 fi
 
-filepath=$1
-serverIP=$2
-username=$3
-path_in_ssh=$4
-
-scp -o StrictHostKeyChecking=no -i "$path_in_ssh" "$filepath" "$username@$serverip:~/"
+scp -o StrictHostKeyChecking=no -i "$4" "$1" "$3@$2:~/"
