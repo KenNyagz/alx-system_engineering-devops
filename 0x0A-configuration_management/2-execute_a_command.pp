@@ -1,7 +1,6 @@
 # Manifest that kills a process "killmenow"
 
-exec { 'kill_killmenow_process':
-  command => '/usr/bin/pkill killmenow',
-  path => ['.'],
-  refreshonly => true,
+exec { 'killmenow':
+  command  => 'pkill -f killmenow',
+  onlyif   => 'pgrep -f killmenow',
 }
