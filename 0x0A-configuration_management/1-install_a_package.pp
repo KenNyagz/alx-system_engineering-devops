@@ -7,7 +7,7 @@ package { 'Flask':
 
 exec { 'print_versions':
   command => 'flask --version',
-  path    => '/usr/local/bin:/usr/bin:/bin',
+  path    => ['/usr/local/bin', '/usr/bin', '/bin'],
   logoutput => true,
   require => Package['Flask'],
 }
