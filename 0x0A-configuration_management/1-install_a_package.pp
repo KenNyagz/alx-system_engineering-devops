@@ -2,12 +2,10 @@
 
 package { 'Flask':
   ensure   => '2.1.0',
-  provider => 'gem',
+  provider => 'pip3',
 }
 
-exec { 'print_versions':
-  command => 'flask --version',
-  path    => ['/usr/local/bin', '/usr/bin', '/bin'],
-  logoutput => true,
-  require => Package['Flask'],
+package { "Werzeug":
+  ensure => '2.1.1',
+  provider => 'pip3',
 }
