@@ -1,4 +1,4 @@
-# /root/alx-system_engineering-devops/0x0A-configuration_management/0-create_a_file.pp
+# create a file in /tmp
 
 file { '/tmp/school':
   ensure  => file,
