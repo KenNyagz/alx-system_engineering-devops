@@ -1,8 +1,10 @@
 # making change to a config file in a remote server using puppet via SSH
 
-ssh_config { 'mycofig':
+file { '/root/.ssh/config':
   ensure => 'present',
-  identityfile => '~/.ssh/school',
-  passwordauthentication => false,
-  pubkeyauthentication => true,
+  content => "
+Host ubuntu
+    IdentifyFile ~/.ssh/school
+    PasswordAuthentication no
+",
 }
