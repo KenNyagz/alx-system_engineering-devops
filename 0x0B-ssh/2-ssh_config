@@ -1,4 +1,4 @@
-# ~/.ssh/config
+# Configuring remote server's IP on local machine ( ~/.ssh/config)
 
 Host 54.84.124.16
     IdentityFile ~/.ssh/school
