@@ -1,31 +1,35 @@
 #!/usr/bin/env bash
-# script installs nginx, ensures it's listening on port 80 and
-# that a GET request(curl) to Nginx at root / return "Hello World!"
+# Script installs nginx, ensures it's listening on port 80, and
+# configures it to return "Hello World!" for GET requests to root /
 
 # Check if the script is run as root
 if [ "$(id -u)" -ne 0 ]; then
-	exit 1
+    echo "Please run as root."
+    exit 1
 fi
 
 # Install nginx
-apt update
-apt install -y nginx
+apt update || { echo "Failed to update package lists."; exit 1; }
+apt install -y nginx || { echo "Failed to install Nginx."; exit 1; }
 
+# Configure Nginx
 cat <<EOF > /etc/nginx/sites-available/default
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
+    listen 80 default_server;
+    listen [::]:80 default_server;
 
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-	server_name _;
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    server_name _;
 
-	location / {
-		return 200 'Hello World!';
-		add_header Content-Type text/plain;
-	}
+    location / {
+        return 200 'Hello World!';
+        add_header Content-Type text/plain;
+    }
 }
 EOF
 
-# Reload nginx
-systemctl reload nginx
+# Reload Nginx
+systemctl reload nginx || { echo "Failed to reload Nginx."; exit 1; }
+
+echo "Nginx installation and configuration completed successfully."
