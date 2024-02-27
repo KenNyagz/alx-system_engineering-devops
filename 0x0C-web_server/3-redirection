@@ -13,6 +13,6 @@ NEW_LOCATION="https://example.com/new_location"
 sed -i '/location \/redirect_me {/a \        return 301 '$NEW_LOCATION';' /etc/nginx/sites-available/default
 
 # Reload Nginx
-systemctl reload nginx
+service nginx restart
 
 echo "Nginx configuration updated. /redirect_me is now redirecting to $NEW_LOCATION with a 301 Moved Permanently redirect."
