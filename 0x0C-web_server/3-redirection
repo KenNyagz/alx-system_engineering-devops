@@ -1,4 +1,5 @@
 #!/bin/bash
+# with code '301 Moved Permanently'
 
 # Check if the script is run as root
 if [ "$(id -u)" -ne 0 ]; then
