@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 docker exec -it <container_id> /bin/bash
 cd /etc/apache2/sites-available
 nano 000-default.conf
