@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # with code '301 Moved Permanently'
 
 # Check if the script is run as root
