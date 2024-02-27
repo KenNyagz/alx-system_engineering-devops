@@ -5,7 +5,7 @@
 apt update
 apt install -y nginx
 
-cat <<EOF > /etc/nginx/sites-available default
+cat <<EOF > /etc/nginx/sites-available/default
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
