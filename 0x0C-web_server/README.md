@@ -7,7 +7,7 @@
 - main HTTP requests
 - DNS and it's main role
 - Dns record types:
-	-A
-	-CNAME
-	-TXT
-	-MX
+	- A
+	- CNAME
+	- TXT
+	- MX
