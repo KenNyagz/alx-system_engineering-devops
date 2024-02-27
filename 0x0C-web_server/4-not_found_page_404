@@ -8,17 +8,16 @@ fi
 
 CUSTOM_404="Ceci n'est pas une page."
 
-# Update the Nginx configuration to handle 404 errors
 sed -i '/server {/a \
-	error_page 404 /404.html;\n \
-	location = /404.html {\n \
-		internal;\n \
-		echo "$CUSTOM_404";\n \
-	}\n \
+    error_page 404 /404.html;\n \
+    location = /404.html {\n \
+        internal;\n \
+        echo "$CUSTOM_404_CONTENT";\n \
+    }\n \
 ' /etc/nginx/sites-available/default
 
-# Create the Custom 404 page
-echo "$CUSTOM_404" > /var/www/html/404.html
+# Create the custom 404 page
+echo "$CUSTOM_404_CONTENT" > /var/www/html/404.html
 
 # Reload nginx
 sudo service nginx restart
