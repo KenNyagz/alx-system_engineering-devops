@@ -7,6 +7,9 @@ if [ "$(id -u)" -ne 0 ]; then
         exit 1
 fi
 
+apt update
+apt install -y nginx
+
 cat <<EOF > /etc/nginx/sites-available/default
 server {
         listen 80 default_server;
