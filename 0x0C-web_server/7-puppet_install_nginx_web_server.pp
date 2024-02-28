@@ -10,14 +10,6 @@ service { 'nginx':
   require => Package['nginx'],
 }
 
-# Define nginx configuration file
-file { '/etc/nginx/sites-available/default':
-  ensure  => file,
-  content => template('nginx/default.conf.erb'),
-  require => Package['nginx'],
-  notify  => Service['nginx'],
-}
-
 # Define Nginx default page
 file { '/var/www/html/index.html':
   ensure  => file,
