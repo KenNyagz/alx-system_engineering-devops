@@ -34,5 +34,11 @@ sed -i '/server {/a \
 # Create the custom 404 page
 echo "$CUSTOM_404_CONTENT" > /var/www/html/404.html
 
+# Enable the custom configuration
+ln -s /etc/nginx/sites-available/custom_404 /etc/nginx/sites-enabled/
+
+# Test NGINX configuration and restart
+nginx -t && systemctl restart nginx
+
 # Reload nginx
-sudo service nginx restart
+# sudo service nginx restart
