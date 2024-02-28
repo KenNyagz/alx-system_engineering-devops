@@ -12,7 +12,7 @@ sed -i '/server {/a \
     error_page 404 /404.html;\n \
     location = /404.html {\n \
         internal;\n \
-        echo "$CUSTOM_404_CONTENT";\n \
+        echo "$CUSTOM_404";\n \
     }\n \
 ' /etc/nginx/sites-available/default
 
