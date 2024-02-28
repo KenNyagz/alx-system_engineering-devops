@@ -25,12 +25,19 @@ cat <<EOF > /etc/nginx/sites-available/default
 server {
         listen 80;
         return 301 https://youtube.com;
+}
+EOF
+
+cat <<EOF > /etc/nginx/sites-available/default
+server {
+	listen 80 default_server;
+        listen [::]:80 default_server;
 
 	error_page 404 = /404.html;
-	location = /404.html {
-		root /var/www/html;
-		internal;
-	}
+        location = /404.html {
+                root /var/www/html;
+                internal;
+        }
 }
 EOF
 
