@@ -7,21 +7,27 @@ if [ "$(id -u)" -ne 0 ]; then
         exit 1
 fi
 
-apt update
-apt install -y nginx
+#apt update
+#apt install -y nginx
 
 cat <<EOF > /etc/nginx/sites-available/default
 server {
         listen 80 default_server;
         listen [::]:80 default_server;
 
+        root /var/www/html;
+
+        index index.html index.htm;
+        server_name _;
+
         location / {
-                return 200 'Hello World!';
+                root /var/www/html;
+                try_files $uri $uri/ =404;
                 add_header Content-Type text/plain;
         }
+
+        rewrite ^/redirect_me$ https://github.com/KenNyagz permanent;
 }
 EOF
-
-sed -i "s/server_name _;/\trewrite ^/redirect_me https://github.com/KenNyagz permanent" /etc/nginx/sites-available/default
 
 sudo service nginx restart
