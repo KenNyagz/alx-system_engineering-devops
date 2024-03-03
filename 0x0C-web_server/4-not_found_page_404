@@ -33,6 +33,12 @@ server {
 	listen 80 default_server;
         listen [::]:80 default_server;
 
+
+	location / {
+                return 200 'Hello World!';
+                add_header Content-Type text/plain;
+        }
+
 	error_page 404 = /404.html;
         location = /404.html {
                 root /var/www/html;

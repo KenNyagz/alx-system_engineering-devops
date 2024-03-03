@@ -22,11 +22,6 @@ server {
 }
 EOF
 
-cat <<EOF > /etc/nginx/sites-available/default
-server {
-	listen 80;
-	return 301 https://youtube.com;
-}
-EOF
+sed -i "s/server_name _;/\trewrite /redirect_me https://github.com/KenNyagz permanent" /etc/nginx/sites-available/default
 
 sudo service nginx restart
