@@ -22,6 +22,6 @@ server {
 }
 EOF
 
-sed -i "s/server_name _;/\trewrite /redirect_me https://github.com/KenNyagz permanent" /etc/nginx/sites-available/default
+sed -i "s/server_name _;/\trewrite ^/redirect_me https://github.com/KenNyagz permanent" /etc/nginx/sites-available/default
 
 sudo service nginx restart
