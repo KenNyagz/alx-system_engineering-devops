@@ -13,15 +13,15 @@ file_line { 'install':
 #Define Nginx service
 service { 'nginx':
   ensure  => running,
-  enable  => true,
+  # enable  => true,
   require => Package['nginx'],
 }
 
 # Define Nginx default page
 file { '/var/www/html/index.html':
-  ensure  => 'present',
+  # ensure  => 'present',
   content => "Hello World!\n",
-  require => Package['nginx'],
+  # require => Package['nginx'],
 }
 
 # Define custom 404
@@ -32,9 +32,9 @@ file { '/var/www/html/404.httml':
 }
 
 # Define Nginx default configuration template
-file { '/etc/nginx/sites-available/default':
-  ensure  => file,
-  source  => 'puppet://module/nginx/default.conf',
-  require => Package['nginx'],
-  notify  => Service['nginx'],
-}
+#file { '/etc/nginx/sites-available/default':
+ #ensure  => file,
+ #source  => 'puppet://module/nginx/default.conf',
+ #require => Package['nginx'],
+ #notify  => Service['nginx'],
+#}
