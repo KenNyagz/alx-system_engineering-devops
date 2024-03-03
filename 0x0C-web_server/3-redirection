@@ -15,19 +15,13 @@ server {
         listen 80 default_server;
         listen [::]:80 default_server;
 
-        root /var/www/html;
-
-        index index.html index.htm;
-        server_name _;
-
         location / {
-                root /var/www/html;
-                try_files \$uri \$uri/ =404;
+                return 200 'Hello World!';
                 add_header Content-Type text/plain;
         }
-
-        rewrite ^/redirect_me$ https://github.com/KenNyagz permanent;
 }
 EOF
+
+sed -i "s/server_name _;/\trewrite ^/redirect_me https://github.com/KenNyagz permanent" /etc/nginx/sites-available/default
 
 sudo service nginx restart
