@@ -9,7 +9,7 @@ fi
 
 apt update
 apt install -y nginx
-
+'''
 cat <<EOF > /etc/nginx/sites-available/default
 server {
         listen 80 default_server;
@@ -20,7 +20,7 @@ server {
                 add_header Content-Type text/plain;
         }
 }
-EOF
+EOF'''
 
 sed -i "s/server_name _;/\trewrite /redirect_me https://github.com/KenNyagz permanent" /etc/nginx/sites-available/default
 
