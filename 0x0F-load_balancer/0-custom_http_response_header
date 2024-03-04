@@ -2,9 +2,9 @@
 # shellcheck disable=SC2154
 
 sudo apt update
-sudo apt -install nginx
+sudo apt install -y nginx
 
 # sed -i "s/location / {/a\n add_header X-Served-By $host;/" /etc/nginx/sites-available/default
-sed -i 's/location \/ {/location \/ { \n add_header X-Served-By $host;/' /etc/nginx/sites-available/default
+sudo sed -i 's/location \/ \{/a\\n add_header X-Served-By $host;/' /etc/nginx/sites-available/default
 
 sudo service nginx restart
