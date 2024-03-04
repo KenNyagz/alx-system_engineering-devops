@@ -4,4 +4,6 @@
 sudo apt update
 sudo apt -install nginx
 
-sed -i "s/location / {/a\
+sed -i "s/location / {/a\n add_header X-Served-By $host;/"
+
+sudo service nginx restart
