@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2154
+
+sudo apt update
+sudo apt -install nginx
+
+sed -i "s/location / {/a\
