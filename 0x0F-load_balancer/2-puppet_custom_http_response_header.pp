@@ -1,18 +1,23 @@
-# Configuring haproxy load balancer
+# 2-puppet_custom_http_response_header.pp
 
-package { 'nginx':
-  ensure => 'installed',
-}
+# Ensure Nginx is installed
+include nginx
 
-file { '/etc/nginx/conf.d/custom_http_header.conf':
-  ensure  => present,
-  content => "add_header X-Served-By $::hostname;",
-  require => Package['nginx'],
-  notify  => Service['nginx'],
-}
+# Define the custom HTTP header
+$custom_header = "X-Served-By: ${fqdn}"
 
-service { 'nginx':
-  ensure    => 'running',
-  enanble   => true,
-  subscribe => File['/etc/nginx/conf.d/custom_http_header.conf'],
+# Create a new server block
+nginx::resource::server { 'custom_header_server':
+  ensure => present,
+  listen => '80',
+  server_name => 'localhost',
+  location => {
+    '/' => {
+      proxy_pass => 'http://localhost:8000',
+      proxy_set_header => {
+        'Host' => $fqdn,
+        'X-Served-By' => $custom_header,
+      },
+    },
+  },
 }
