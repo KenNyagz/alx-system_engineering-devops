@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2154
 
-sudo apt update
-sudo apt install -y haproxy
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+
+sudo service haproxy start
+sudo service haproxy enable
 
 cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg >/dev/null
 global
@@ -35,6 +38,6 @@ backend http_back
 EOF
 
 # Enable HAProxy management via init script
-sudo systemctl enable haproxy
+#sudo systemctl enable haproxy
 
 sudo systemctl restart haproxy
