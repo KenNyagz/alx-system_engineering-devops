@@ -1,23 +1,25 @@
-# 2-puppet_custom_http_response_header.pp
+# Configuring haproxy load balancer
 
-# Ensure Nginx is installed
-include nginx
+class nginx_custom_header {
+  # Ensure Nginx is installed
+  package { 'nginx':
+    ensure => installed,
+  }
 
-# Define the custom HTTP header
-$custom_header = "X-Served-By: ${fqdn}"
+  # Manage the Nginx configuration to include the custom header
+  file { '/etc/nginx/conf.d/custom_header.conf':
+    ensure  => file,
+    content => epp('nginx_custom_header/custom_header.epp'),
+    require => Package['nginx'],
+    notify  => Service['nginx'],
+  }
 
-# Create a new server block
-nginx::resource::server { 'custom_header_server':
-  ensure => present,
-  listen => '80',
-  server_name => 'localhost',
-  location => {
-    '/' => {
-      proxy_pass => 'http://localhost:8000',
-      proxy_set_header => {
-        'Host' => $fqdn,
-        'X-Served-By' => $custom_header,
-      },
-    },
-  },
+  # Ensure the Nginx service is running and enabled
+  service { 'nginx':
+    ensure => running,
+    enable => true,
+    require => File['/etc/nginx/conf.d/custom_header.conf'],
+  }
 }
+
+include nginx_custom_header
