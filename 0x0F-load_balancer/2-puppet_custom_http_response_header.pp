@@ -1,7 +1,7 @@
 # Configuring haproxy load balancer
 
 package { 'nginx':
-  ensure => installed,
+  ensure => 'installed',
 }
 
 file { '/etc/nginx/conf.d/custom_http_header.conf':
