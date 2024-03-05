@@ -7,8 +7,7 @@ sudo apt-get -y install haproxy
 sudo service haproxy start
 sudo service haproxy enable
 
-cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg >/dev/null
-global
+printf "global
     log /dev/log    local0
     log /dev/log    local1 notice
     chroot /var/lib/haproxy
@@ -34,10 +33,9 @@ frontend http_front
 backend http_back
     balance roundrobin
     server 447462-web-01 54.236.17.14:80
-    server 447462-web-02 18.209.223.91:80
-EOF
+    server 447462-web-02 18.209.223.91:80" > /etc/haproxy/haproxy.cfg 2>/dev/null
 
 # Enable HAProxy management via init script
 #sudo systemctl enable haproxy
 
-sudo systemctl restart haproxy
+sudo service haproxy restart
