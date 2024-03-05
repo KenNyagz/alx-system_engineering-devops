@@ -6,7 +6,7 @@ package { 'nginx':
 
 file { '/etc/nginx/conf.d/custom_http_header.conf':
   ensure  => present,
-  content => "server_tokens off;\nadd_header X-Served_By ${::hostname};\n",
+  content => "server_tokens off;\nadd_header X-Served-By ${::hostname};\n",
   notify  => service['nginx'],
 }
 
