@@ -9,7 +9,7 @@ class nginx_custom_header {
     ensure  => 'file',
     content => "add_header X-Served-By $hostname;",
     require => Package['nginx'],
-    notify  => service['nginx'],
+    notify  => Service['nginx'],
   }
 
   service { 'nginx':
