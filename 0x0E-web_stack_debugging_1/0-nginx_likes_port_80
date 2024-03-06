@@ -4,20 +4,22 @@
 sudo apt-get update
 sud apt-get install -y net-tools
 
+
 if ! command -v nginx &> /dev/null; then
 	echo "Nginx not installed. Installing nginx..."
 	exit 1
 fi
 
-if ! grep -q 'listen\s\+80' /etc/nginx/nginx.conf; then
+if ! grep -q 'listen\s\+80' /etc/nginx/sites-available/default; then
 	echo "Configuring Nginx to listen on port 80..."
-	sed -i 's/listen\s\+80/listen 80 default_server;/g' /etc/nginx/nginx-conf
+	sed -i 's/listen\s\+80/listen 80 default_server;/g' /etc/nginx/sites-available/default
 fi
 
 #if netstat -tuln | grep -q ":80\s"; then
 #	echo "Port 80 is in use"
 #	exit 1
 #fi
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 echo "Restarting nginx"
 sudo service nginx restart
