@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # debugging nginx to listen to port 80
 
-apt-get update
-apt-get install -y net-tools
+sudo apt-get update
+sud apt-get install -y net-tools
 
 if ! command -v nginx &> /dev/null; then
 	echo "Nginx not installed. Installing nginx..."
@@ -20,4 +20,4 @@ fi
 #fi
 
 echo "Restarting nginx"
-service nginx restart
+sudo service nginx restart
