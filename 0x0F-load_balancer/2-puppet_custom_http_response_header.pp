@@ -1,6 +1,6 @@
 # Configuring haproxy load balancer
 
-class nginx_custom_header {
+#class nginx_custom_header {
   # Ensure Nginx is installed
   package { 'nginx':
     ensure => installed,
@@ -20,6 +20,5 @@ class nginx_custom_header {
     enable => true,
     require => File['/etc/nginx/conf.d/custom_header.conf'],
   }
-}
-
-include nginx_custom_header
+#}
+#include nginx_custom_header
