@@ -1,17 +1,3 @@
-#!/usr/bin/env bash
-# Setting up SSL certificate
-
-sudo apt update
-sudo apt install snapd
-sudo apt-get remove certbot
-sudo apt-get install certbot
-sudo systemctl stop haproxy # stop haproxy
-sudo certbot certonly --standalone --preferred-challenges http --http-01-port 80 -d www.nyagz.tech
-sudo ls /etc/letsencrypt/live/www.nyagz.tech
-sudo mkdir -p /etc/haproxy/certs
-DOMAIN='www.nyagz.tech' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/haproxy/certs/$DOMAIN.pem'
-sudo chmod -R go-rwx /etc/haproxy/certs
-cat <<EOF > /etc/haproxy/haproxy.cfg
 global
         log /dev/log    local0
         log /dev/log    local1 notice
