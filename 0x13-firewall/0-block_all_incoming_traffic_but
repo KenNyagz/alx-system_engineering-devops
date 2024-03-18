@@ -1,7 +1,7 @@
 sudo apt update -y
 sudo apt install ufw
 
-sudo enable
+sudo ufw enable
 
 sudo ufw allow 22
 sudo ufw allow 443
