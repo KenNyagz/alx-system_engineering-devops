@@ -1,4 +1,4 @@
 **0x12. Web stack debugging #2**
 
 Web stack debugging
-`shell```nginx``
+`shell`,``nginx``
