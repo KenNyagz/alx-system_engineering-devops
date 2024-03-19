@@ -1,36 +1,6 @@
 #!/usr/bin/env bash
 # Configures nginx to run as the user'nginx' and listen on port 8080 on all active IPs
 
-
-
-# Check if the script is being run as root
-if [ "$(id -u)" -ne 0 ]; then
-    echo "Please run this script as root"
-    exit 1
-fi
-
-# Stop Nginx if it's already running
-service nginx stop
-
-# Update Nginx configuration to run as nginx user
-sed -i 's/user\s*nginx;/user nginx;/' /etc/nginx/nginx.conf
-
-# Update Nginx configuration to listen on port 8080
-sed -i 's/listen\s*80;/listen 8080;/' /etc/nginx/sites-available/default
-
-# Set ownership of Nginx files to nginx user
-chown -R nginx:nginx /var/log/nginx /var/lib/nginx
-
-# Start Nginx
-service nginx start
-
-echo "Nginx configured to run as nginx user and listening on all active IPs on port 8080"
-
-
-
-
-
-
 #service nginx stop
 
 # Update Nginx configuration to run as nginx user
@@ -42,3 +12,13 @@ echo "Nginx configured to run as nginx user and listening on all active IPs on p
 #chmod 644 /etc/nginx/nginx.conf
 
 #sudo -u nginx service nginx start
+
+
+# Create the nginx user if it doesn't exist
+id -u nginx &>/dev/null || useradd -r -s /bin/false nginx
+
+# Change the ownership of the nginx configuration directory and files
+chown -R nginx:nginx /etc/nginx /var/log/nginx /var/lib/nginx
+
+# Switch to the nginx user
+exec su-exec nginx /usr/sbin/nginx -g "daemon off;"
