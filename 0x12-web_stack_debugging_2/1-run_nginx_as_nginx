@@ -1,26 +1,16 @@
 #!/usr/bin/env bash
 # Configures nginx to run as the user'nginx' and listen on port 8080 on all active IPs
 
-#service nginx stop
-
-# Update Nginx configuration to run as nginx user
-#sed -i 's/user\s*nginx;/user nginx;/' /etc/nginx/nginx.conf
-
-# Update Nginx configuration to listen on port 8080
-#sed i "s/80 default_/8080 default_/" /etc/nginx/sites-available/default
-
-#chmod 644 /etc/nginx/nginx.conf
-
-#sudo -u nginx service nginx start
-
-# Stop Nginx
 service nginx stop
 
 # Update Nginx configuration to run as nginx user
-sed -i 's/user  nginx;/user  nginx;/' /etc/nginx/nginx.conf
+sed -i 's/user\s*nginx;/user nginx;/' /etc/nginx/nginx.conf
 
-# Update Nginx configuration to listen on all active IPs on port 8080
-sed -i 's/listen       80;/listen       8080;/g' /etc/nginx/sites-available/default
+# Update Nginx configuration to listen on port 8080
+sed i "s/listen 80 default_server;/listen 8080 default_server/" /etc/nginx/sites-available/default
 
-# Start Nginx
-service nginx start
+chown -R nginx:nginx /var/log/nginx /var/lib/nginx
+
+chmod 644 /etc/nginx/nginx.conf
+
+sudo -u nginx service nginx start
