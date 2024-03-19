@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 # Runs command as different user
 
-sudo -u '$1' whoami
+if [ -z '$1' ]; then
+	sudo -u '$1' whoami
+else
+	whoami
+fi
