@@ -2,7 +2,7 @@
 # Runs command as different user
 
 if [ -z "$1" ]; then
-	sudo -u '$1' whoami
+	sudo -u "$1" whoami
 else
 	whoami
 fi
