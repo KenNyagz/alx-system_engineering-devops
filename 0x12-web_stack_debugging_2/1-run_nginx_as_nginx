@@ -5,4 +5,4 @@ sudo sed i 's/80/8080/' /etc/nginx/sites-available/default
 
 sudo chown -R nginx:nginx /var/log/nginx /var/lib/nginx
 
-sudo service nginx restart
+sudo -u nginx service nginx restart
