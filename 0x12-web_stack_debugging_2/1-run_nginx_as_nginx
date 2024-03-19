@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # Configures nginx to run as the user'nginx' and listen on port 8080 on all active IPs
 
+service nginx stop
+
+# Update Nginx configuration to run as nginx user
+#sed -i 's/user\s*nginx;/user nginx;/' /etc/nginx/nginx.conf
+
+# Update Nginx configuration to listen on port 8080
 sed i "s/80 default_/8080 default_/" /etc/nginx/sites-available/default
 
 chmod 644 /etc/nginx/nginx.conf
