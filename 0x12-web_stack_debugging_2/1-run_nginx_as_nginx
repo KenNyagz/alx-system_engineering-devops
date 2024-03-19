@@ -2,7 +2,6 @@
 # Configures nginx to run as the user'nginx' and listen on port 8080 on all active IPs
 
 
-#!/bin/bash
 
 # Check if the script is being run as root
 if [ "$(id -u)" -ne 0 ]; then
