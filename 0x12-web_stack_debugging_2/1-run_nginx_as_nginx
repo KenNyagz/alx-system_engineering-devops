@@ -5,4 +5,4 @@ sed i "s/80 default_/8080 default_/" /etc/nginx/sites-available/default
 
 chmod 644 /etc/nginx/nginx.conf
 
-sudo -u nginx service nginx restart
+sudo -u nginx service nginx start
