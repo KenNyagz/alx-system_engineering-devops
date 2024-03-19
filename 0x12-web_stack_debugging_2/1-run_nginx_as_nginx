@@ -13,12 +13,14 @@
 
 #sudo -u nginx service nginx start
 
+# Stop Nginx
+service nginx stop
 
-# Create the nginx user if it doesn't exist
-id -u nginx &>/dev/null || useradd -r -s /bin/false nginx
+# Update Nginx configuration to run as nginx user
+sed -i 's/user  nginx;/user  nginx;/' /etc/nginx/nginx.conf
 
-# Change the ownership of the nginx configuration directory and files
-chown -R nginx:nginx /etc/nginx /var/log/nginx /var/lib/nginx
+# Update Nginx configuration to listen on all active IPs on port 8080
+sed -i 's/listen       80;/listen       8080;/g' /etc/nginx/sites-available/default
 
-# Switch to the nginx user
-exec su-exec nginx /usr/sbin/nginx -g "daemon off;"
+# Start Nginx
+service nginx start
