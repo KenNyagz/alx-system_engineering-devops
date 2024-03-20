@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
-#  Run software as another user
+# Configures nginx to run as the user'nginx' and listen on port 8080 on all active IPs
 
-sudo -u "$1" whoami 
+# Update Nginx configuration to run as nginx user
+sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+
+# Update Nginx configuration to listen on port 8080
+sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-available/default
+
+chmod 644 /etc/nginx/nginx.conf
+pkill apache2
+su nginx -s /bin/bash -c 'service nginx restart'
