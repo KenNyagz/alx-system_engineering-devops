@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 '''Python script to export data in the JSON format
 '''
+import json
 import requests
 import sys
-import json
 
 
 def get_employee_progress(employee_id):
@@ -19,12 +19,16 @@ def get_employee_progress(employee_id):
 
     todo_list_url = f"https\
 ://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    todo_list_url = "https://jsonplaceholder.typicode.com/user/{}/todos".format(
+                sys.argv[1])
     response = requests.get(todo_list_url)
     if response.status_code != 200:
         print("Error: TODO list not found")
         return
 
     todo_list = response.json()
+    
+
 
     formatted_data = {sys.argv[1]: [{"task": task["title"],\
                                   "completed": task["completed"],\
