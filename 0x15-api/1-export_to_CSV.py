@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''export data in the CSV format 
+'''export data in the CSV format
 '''
 import requests
 import sys
@@ -29,16 +29,11 @@ def get_employee_progress(employee_id):
     filename = f"{employee_id}.csv"
 
     with open(filename, mode='w', newline='') as fle:
-        writer = csv.writer(fle)
-        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
-    #total_tasks = len(todo_list)
-    #done_tasks = [task for task in todo_list if task['completed']]
-    #num_done_tasks = len(done_tasks)
-    #print(f"Employee {employee_name} is done with tasks\
-#({num_done_tasks}/{total_tasks}):")
+        writer = csv.writer(fle, quoting=csv.QUOTE_ALL)
 
         for task in todo_list:
-            writer.writerow([employee_id, employee_name, task['completed'], task['title']])
+            writer.writerow([employee_id, employee_name,
+                            task['completed'], task['title']])
 
 
 if __name__ == "__main__":
