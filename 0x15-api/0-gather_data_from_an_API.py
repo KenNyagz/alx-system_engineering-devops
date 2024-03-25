@@ -29,8 +29,10 @@ def get_employee_progress(employee_id):
     num_done_tasks = len(done_tasks)
     print(f"Employee {employee_name}\
  is done with tasks ({num_done_tasks}/{total_tasks}):")
+
+    indent = " " * 4
     for task in done_tasks:
-        print(f"\t{task['title']}")
+        print(f"{indent}{task['title']}")
 
 
 if __name__ == "__main__":
