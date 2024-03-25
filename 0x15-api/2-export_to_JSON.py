@@ -34,7 +34,7 @@ def get_employee_progress(employee_id):
                      }
     filename = f"{employee_id}.json"
     with open(filename, mode='w') as fyle:
-        json.dump(formatted_data, fyle, indent=4)
+        json.dump(formatted_data, fyle)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
