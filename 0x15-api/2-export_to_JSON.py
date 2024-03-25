@@ -26,7 +26,7 @@ def get_employee_progress(employee_id):
 
     todo_list = response.json()
 
-    formatted_data = {"USER_ID": [{"task": task["title"],\
+    formatted_data = {str(employee_id): [{"task": task["title"],\
                                   "completed": task["completed"],\
                                   "username": employee_name}\
                                   for task in todo_list
