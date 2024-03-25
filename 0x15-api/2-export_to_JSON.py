@@ -17,8 +17,6 @@ def get_employee_progress(employee_id):
     employee_data = response.json()
     employee_name = employee_data.get('name')
 
-    todo_list_url = f"https\
-://jsonplaceholder.typicode.com/todos?userId={employee_id}"
     todo_list_url = "https://jsonplaceholder.typicode.com/user/{}/todos".format(
                 sys.argv[1])
     response = requests.get(todo_list_url)
