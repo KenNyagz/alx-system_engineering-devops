@@ -32,9 +32,14 @@ def get_employee_progress(employee_id):
                                   for task in todo_list
                                  ]
                      }
-    filename = f"{employee_id}.json"
-    with open(filename, mode='w') as fyle:
+    filename = f"{employee_id}.json"   '''
+    with open(filename, 'w') as fyle:
         json.dump(formatted_data, fyle)
+'''
+    with open("{}.json".format(sys.argv[1]), 'w') as f:
+        json.dump({sys.argv[1]: todo_list}, f)
+
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
