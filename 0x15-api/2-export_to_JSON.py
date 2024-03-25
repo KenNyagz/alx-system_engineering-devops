@@ -26,19 +26,19 @@ def get_employee_progress(employee_id):
 
     todo_list = response.json()
 
-    formatted_data = {str(employee_id): [{"task": task["title"],\
+    formatted_data = {sys.argv[1]: [{"task": task["title"],\
                                   "completed": task["completed"],\
                                   "username": employee_name}\
                                   for task in todo_list
                                  ]
                      }
-    filename = f"{employee_id}.json"   '''
+    filename = f"{employee_id}.json"
     with open(filename, 'w') as fyle:
         json.dump(formatted_data, fyle)
 '''
     with open("{}.json".format(sys.argv[1]), 'w') as f:
         json.dump({sys.argv[1]: todo_list}, f)
-
+'''
 
 
 if __name__ == "__main__":
