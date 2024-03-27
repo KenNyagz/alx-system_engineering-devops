@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Saving data collected and filtered from api to csv file'''
 import csv
 import requests
 import sys
