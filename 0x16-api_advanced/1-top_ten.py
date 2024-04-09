@@ -16,7 +16,8 @@ def top_ten(subreddit):
         titles = [post['data']['title'] for post in data['data']['children']]
 
         for title in titles:
-            print("{}".format(title))
+            if not title.startswith("[META]"):
+                print("{}".format(title))
     else:
         print("None")
 
