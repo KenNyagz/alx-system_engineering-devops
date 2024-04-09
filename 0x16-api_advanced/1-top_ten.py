@@ -10,7 +10,7 @@ def top_ten(subreddit):
 
     headers = {'User-agent': 'Myself'}
 
-    resp = requests.get(uri, headers=headers)
+    resp = requests.get(uri, headers=headers, allow_redirects=False)
     if resp.status_code == 200:
         data = resp.json()
         titles = [post['data']['title'] for post in data['data']['children']]
@@ -19,3 +19,11 @@ def top_ten(subreddit):
             print("{}".format(title))
     else:
         print("None")
+
+
+if __name__ == '__main__':
+    from sys import argv
+    if len(argv) == 2:
+        top_ten(argv[1])
+    else:
+        print("Provide one subreddit")
