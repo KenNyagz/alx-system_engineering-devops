@@ -12,10 +12,11 @@ def number_of_subscribers(subreddit):
     headers = {'User-agent': 'Mozilla/5.0'}
 
     url = api_url + endpoint
-    resp = requests.get(url, headers=headers)
+    resp = requests.get(url, headers=headersi, allow_redirects=False)
 
     if resp.status_code == 200:
         data = resp.json()
+        # if not valid subreddit return 0 
         if 'data' not in data or 'subscribers' not in data['data']:
             return 0
         return data['data']['subscribers']
