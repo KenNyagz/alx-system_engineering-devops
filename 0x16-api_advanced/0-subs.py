@@ -12,7 +12,7 @@ def number_of_subscribers(subreddit):
     headers = {'User-agent': 'Mozilla/5.0'}
 
     url = api_url + endpoint
-    resp = requests.get(url, headers=headersi, allow_redirects=False)
+    resp = requests.get(url, headers=headers, allow_redirects=False)
 
     if resp.status_code == 200:
         data = resp.json()
