@@ -5,6 +5,8 @@ import requests
 
 def number_of_subscribers(subreddit):
     '''Retrieves number of subscribers of a subreddit community'''
+    if not subreddit or not isinstance(subreddit, str):
+        return 0
     api_url = "https://www.reddit.com"
     endpoint = f"/r/{subreddit}/about.json"
     headers = {'User-agent': 'Mozilla/5.0'}
