@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Recursively queries reddit api returning a list of all hot articles of a 
+'''Recursively queries reddit api returning a list of all hot articles of a
 subreddit'''
 import requests
 
@@ -25,7 +25,7 @@ def recurse(subreddit, hot_list=[], after=None):
 
         after = data['data'].get('after')
         if after:
-                recurse(subreddit, hot_list, after)
+            recurse(subreddit, hot_list, after)
         else:
             return hot_list
     else:
