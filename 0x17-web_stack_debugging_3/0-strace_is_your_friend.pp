@@ -1,20 +1,23 @@
 # Debug apache
 $apache_pid = pgrep -f httpd
 
-module apache_strace {
-  class apache_strace {
-    file { '/usr/local/bin/strace_apache.sh':
-      ensure => file,
-      mode   => '0755',
-      source => 'puppet:///modules/apache_strace/strace_apache.sh',
+class apache {
+    package { 'apache2':
+        ensure => installed,
     }
 
-    cron { 'strace_apache':
-      ensure  => present,
-      user    => 'root',
-      command => '/usr/local/bin/strace_apache.sh',
-      hour    => '2',
-      minute  => '0',
+    service { 'apache2':
+        ensure  => running,
+        enable  => true,
+        require => Package['apache2'],
     }
-  }
+
+    # You can manage Apache configuration files here
+    # For example, you might ensure the correct settings are in httpd.conf
+    file { '/etc/apache2/httpd.conf':
+        ensure  => file,
+        content => template('apache/httpd.conf.erb'),
+        require => Package['apache2'],
+        notify  => Service['apache2'],
+    }
 }
