@@ -1,3 +1,4 @@
+# apache debugging
 module apache_strace {
   class apache_strace (
     $strace_options = '-p 8181 -o /tmp/strace.log -s 200 -ff'
