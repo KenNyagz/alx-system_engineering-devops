@@ -1,3 +1,4 @@
+# Debug apache
 $apache_pid = pgrep -f httpd
 
 module apache_strace {
