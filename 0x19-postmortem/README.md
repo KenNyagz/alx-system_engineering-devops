@@ -1,4 +1,6 @@
-` `		<h1>EG corp Database collapse report</h1>
+<div style="text-align:center">
+<h1>EG corp Database collapse report</h1>
+</div>
 
 The following event aims to describe the widespread database collapse that took place on 11th April 2024 at 8:50pm EAT in Nairobi, Kenya
 
