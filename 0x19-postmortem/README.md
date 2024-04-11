@@ -20,7 +20,7 @@ At 8:50 PM EAT, a new table named 'Customer debt' was added to the database 'Cus
 The DB collapse affected end users majorly. Our London office also registered 500 error messages while carrying on with their duties.
 
 <h3>Preventive Measures</h3>
-- Improvements:
+*- Improvements:*
 
 A test environment and test branch to be created to handle all non-tested and non-approved changes.
 
