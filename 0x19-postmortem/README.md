@@ -1,6 +1,4 @@
-<div style="text-align:center">
 <h1>EG corp Database collapse report</h1>
-</div>
 
 The following event aims to describe the widespread database collapse that took place on 11th April 2024 at 8:50pm EAT in Nairobi, Kenya
 
@@ -22,6 +20,8 @@ At 8:50 PM EAT, a new table named 'Customer debt' was added to the database 'Cus
 The DB collapse affected end users majorly. Our London office also registered 500 error messages while carrying on with their duties.
 
 <h3>Preventive Measures</h3>
+- Improvements:
+
 A test environment and test branch to be created to handle all non-tested and non-approved changes.
 
 A more convinient roll back system to be established to make rolling back changes easier
