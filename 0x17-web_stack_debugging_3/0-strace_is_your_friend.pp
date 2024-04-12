@@ -1,11 +1,5 @@
-# Ensure Apache service is running
-service { 'apache2':
-  ensure => 'running',
-}
+# Debug wordpress running on apache with php
 
-# Define file resource to manage Apache configuration file
-file { '/etc/apache2/apache2.conf':
-  ensure  => file,
-  content => template('my_module/apache2.conf.erb'),
-  notify  => Service['apache2'], # Restart Apache if the config changes
+exec { 'typo_fix':
+  command => "sed -i 's/phpp/php/' /var/www/html/wp-settings.php",
 }
