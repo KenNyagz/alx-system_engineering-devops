@@ -1,6 +1,6 @@
 # ppt manifest to add user and give root permission
 
-exec { 'add_user':
-  command => 'sudo adduser holberton; usermod -aG root holberton',
+exec { 'fix_user_limit':
+  command => 'sed -i "s/[0-9]/&00/"' /etc/security/limits.conf,
   path    => '/usr/sbin:/usr/local/bin:/usr/local/sbin'
 }
