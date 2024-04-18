@@ -3,4 +3,5 @@
 exec { 'fd_limmit_change':
   path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin',
   command => "sed 's/15/4096/' /etc/default/nginx; service nginx restart",
+  onlyif  => 'test -e /etc/default/nginx',
 }
