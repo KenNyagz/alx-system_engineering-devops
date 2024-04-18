@@ -1,7 +1,10 @@
 # ppt manifest to fix a user's file permission limit
 
-exec { 'fix_user_limit':
-  command => 'sed -i "/holberton/s/[0-9]/&00/" /etc/security/limits.conf',
-  path    => ['/usr/sbin', '/usr/local/bin', '/usr/local/sbin'],
-  # path    => '/usr/sbin/:/usr/local/bin/:/usr/local/sbin/',
+exec { 'fix_limit_hbton_user':
+  command => 'sed -i "/holberton hard/s/5/10000/" /etc/security/limits.conf',
+  path    => '/usr/local/bin/:/bin/'
+}
+exec { 'increase_soft_file':
+  command => 'sed -i "/holberton soft/s/4/20000/" /etc/security/limits.conf',
+  path    => '/usr/local/bin/:/bin/'
 }
