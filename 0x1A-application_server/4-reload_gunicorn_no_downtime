@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-'''script to gracefully shut down gunicorn worker and spin up
-new ones with new configs during an update'''
+#script to gracefully shut down gunicorn worker and spin up new ones with new configs during an update
 
 stop_old_workers() {
 	old_workers=$(pgrep -f "gunicorn.*2-hbnb:app")
 	for pid in $old_workers; do
-		kill -s TERM $pid
+		kill -s TERM "$pid"
 		sleep 5
 	done
 }
