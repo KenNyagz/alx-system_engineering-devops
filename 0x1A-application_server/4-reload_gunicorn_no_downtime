@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+'''script to gracefully shut down gunicorn worker and spin up
+new ones with new configs during an update'''
+
+stop_old_workers() {
+	old_workers=$(pgrep -f "gunicorn.*2-hbnb:app")
+	for pid in $old_workers; do
+		kill -s TERM $pid
+		sleep 5
+	done
+}
+
+start_new_workers() {
+	gunicorn --workers 3 --bind 0.0.0.0:5003 --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log 2-hbnb:app &
+}
+
+reload_gunicorn() {
+	stop_old_workers
+	start_new_workers
+}
+
+reload_gunicorn
